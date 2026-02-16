@@ -1,6 +1,7 @@
 import path from "node:path";
 import express from "express";
 import mongoose from "mongoose";
+import { Article } from "./models";
 
 // App constants
 const SERVER_PORT = 3000;
@@ -26,8 +27,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 // Endpoints
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  const articles: Article[] = await Article.find({});
+  res.render("index", {
+    articles
+  });
 })
 
 app.listen(SERVER_PORT, () => {
