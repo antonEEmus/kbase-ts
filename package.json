@@ -1,0 +1,23 @@
+{
+  "name": "kbase-ts",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --watch . --exec bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsx": "^4.21.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "nodemon": "^3.1.11",
+    "pug": "^3.0.3"
+  }
+}
